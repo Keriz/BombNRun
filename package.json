@@ -1,0 +1,19 @@
+{
+  "name": "bombnrun",
+  "version": "1.0.0",
+  "description": "javascript game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Keriz/BombNRun.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keriz/BombNRun/issues"
+  },
+  "homepage": "https://github.com/Keriz/BombNRun"
+}
