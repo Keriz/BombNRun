@@ -1,11 +1,7 @@
-var http = require('http');
+var express = require('express');
+var app = express();
+var server = require('http').Server(app);
 
-var server = http.createServer(function(req, res) {
-
-  res.writeHead(200);
-
-  res.end('Hellow test2');
-
-});
+app.use(express.static('public'));
 
 server.listen(8000);
