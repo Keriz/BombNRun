@@ -8,4 +8,3 @@ server/server.js
 *.html
 *.js.map
 *.css
-deploy
