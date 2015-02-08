@@ -5,6 +5,6 @@ cd build
 git add -u
 git add .
 git commit -m "build $DATE"
-git push prod master || { echo 'push failed' ; exit 1; }
+git push -f prod master || { echo 'push failed' ; exit 1; }
 cd ..
 echo "build $DATE sent & deployed !"

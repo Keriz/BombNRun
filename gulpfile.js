@@ -11,8 +11,18 @@ var nib = require('nib')
 
 var production = process.env.NODE_ENV === 'production';
 
-gulp.task('js', bundle); // so you can run `gulp js` to build the file
-gulp.task('dev', ['js'], function() {
+function serverbundle() {
+  return serverbundler.bundle()
+    // log errors if they happen
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .pipe(source('server.js'))
+    .pipe(gulp.dest('./server/'));
+}
+
+gulp.task('client', bundle); // so you can run `gulp js` to build the file
+gulp.task('server', serverbundle); // so you can run `gulp js` to build the file
+
+gulp.task('dev', ['client', 'server'], function() {
   //jade no sourcemaps
   watch('public/*.jade', function(event){console.log('File ' + event.path + ' was ' + event.event + ', running jade task');})
     .pipe(jade())
@@ -62,3 +72,7 @@ function bundle() {
     .pipe(source('client.js'))
     .pipe(gulp.dest('./public/'));
 }
+
+var serverbundler = watchify(browserify('./server/main.js', watchify.args));
+
+serverbundler.on('update', serverbundle);
