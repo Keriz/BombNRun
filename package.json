@@ -14,10 +14,14 @@
   "license": "ISC",
   "dependencies": {
     "browserify": ">= 8.1.3",
-    "express": ">= 4.11.2"
+    "express": ">= 4.11.2",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.3.0",
+    "grunt-contrib-jade": "^0.14.1",
+    "grunt-contrib-stylus": "^0.20.0"
   },
   "devDependencies": {
-    "watchify": ">= 2.3.0"
+    "grunt-watchify": "^0.1.0"
   },
   "bugs": {
     "url": "https://github.com/Keriz/BombNRun/issues"
